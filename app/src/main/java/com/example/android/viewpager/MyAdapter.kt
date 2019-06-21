@@ -6,12 +6,16 @@ import android.support.v4.app.FragmentStatePagerAdapter
 
 class MyAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm) {
 
+    private val tab1Fragment = Tab1()
+    private val tab2Fragment = Tab2()
+    private val tab3Fragment = Tab3()
+
     override fun getItem(position: Int) =
         when(position) {
-            0 -> Tab1()
-            1 -> Tab2()
-            2 -> Tab3()
-            else -> Tab1()
+            0 -> tab1Fragment
+            1 -> tab2Fragment
+            2 -> tab3Fragment
+            else -> tab1Fragment
         }
 
     override fun getCount() = 3
